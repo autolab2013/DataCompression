@@ -1,7 +1,10 @@
 import struct
 
+# encoded as unsigned short, pack format is "<H" little ending unsigned short
 USHRT_MAX = 65535
 input_file = 'compressed'
+output_file = 'out.txt'
+# compute the word frequency of austen.txt, found only this chars are used
 char_list = [
     ' ',
     'A',
@@ -56,6 +59,7 @@ char_list = [
 ]
 
 
+# build <code, word> decoding table from char list
 def build_table(clist):
     mytable = dict()
     index = 0
@@ -66,7 +70,7 @@ def build_table(clist):
 
 
 with open(input_file, 'r') as fin:
-    fout = open('out.txt', 'w')
+    fout = open(output_file, 'w')
     my_table = build_table(char_list)
     c = fin.read(2)
     code = struct.unpack('<H', c)[0]
@@ -75,12 +79,16 @@ with open(input_file, 'r') as fin:
     entry = ''
 
     while True:
+        # read 2 bytes at a time
         c = fin.read(2)
+
+        # if the code table size is too large, reset it to orginal
         if len(my_table) >= USHRT_MAX:
-            # print "table size is : " + str(len(my_table))
             my_table = build_table(char_list)
+            # print "table size is : " + str(len(my_table))
             # print "resized size is : " + str(len(my_table))
         if not c:
+            # end of file
             break
         else:
             code = struct.unpack('<H', c)[0]
@@ -93,4 +101,3 @@ with open(input_file, 'r') as fin:
                 my_table[next_index] = entry
             fout.write(entry)
             word = entry
-
