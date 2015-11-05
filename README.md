@@ -11,7 +11,6 @@ LZW Compress & Decompress
         - [x] generate ```compressed```
     - ```compressed```:
         - ```-rw-r--r--  1 nathanlrf  staff   1.1M Nov  5 09:48 compressed```
-
     - ```decompress.py``` tested on amdpool.ece:
         - [x] ```/opt/alttools/bin/python decompress.py```
         - [x] ```diff out.txt austen.txt```
