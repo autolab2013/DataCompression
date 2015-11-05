@@ -1,8 +1,10 @@
 TODO:
+
 1.  Compress file into compressed
 2.  Decompress compressed into out.txt
 
 TASK:
+
 1.  run on amdpool:
     ```
     /opt/alttools/bin/python decompress.py
