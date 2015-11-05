@@ -65,7 +65,7 @@ fout = open('out.txt','w')
 
 # Read in the entire compressed file
 
-data = fin.read();
+data = fin.read()
 index_to_sym = dict(enumerate(phrases))
 
 length = len(data)
@@ -84,7 +84,7 @@ while i < length / 2:
 
     index = struct.unpack("<H", data[i * 2 : (i + 1) * 2])[0]
     if index in index_to_sym:
-        entry = index_to_sym[index];
+        entry = index_to_sym[index]
     elif index == count:
         entry = word + word[0]
     else:

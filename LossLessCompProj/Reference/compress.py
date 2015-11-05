@@ -127,9 +127,9 @@ while i < length:
             #just get the index of the last phrase and not put into dictionary
 
             encoding = sym_to_index[phrase]
-            # print("Symbol: " + phrase)
-            # print("encoding: " + str(encoding))
-            # print("")
+            print("Symbol: " + phrase)
+            print("encoding: " + str(encoding))
+            print("")
             outbytes = struct.pack("<H", encoding)
             fout.write(outbytes)
             j += 1
@@ -138,15 +138,15 @@ while i < length:
             j += 1
         else:
             #put new phrase into dictionary
-            # print("i: " + str(i) + " j: " + str(j))
-            # print("phrase: " + phrase + " length of phrase: " + str(len(phrase)))
+            print("i: " + str(i) + " j: " + str(j))
+            print("phrase: " + phrase + " length of phrase: " + str(len(phrase)))
             sym_to_index[phrase] = count
             count += 1
 
             encoding = sym_to_index[phrase[:-1]]
-            # print("Symbol: " + "'" + phrase[:-1] + "'")
-            # print("encoding: " + str(encoding))
-            # print("")
+            print("Symbol: " + "'" + phrase[:-1] + "'")
+            print("encoding: " + str(encoding))
+            print("")
             outbytes = struct.pack("<H", encoding)
             fout.write(outbytes)
             encoding = 0

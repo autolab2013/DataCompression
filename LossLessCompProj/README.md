@@ -21,3 +21,5 @@ TASK:
     py_compile.compile('decompress.py')
     ```
 5.  gzip result: 943K
+
+A good explanation of LZW on [StackOverflow](http://stackoverflow.com/questions/10450395/lzw-decompression-algorithm)
