@@ -30,6 +30,8 @@ if [ -e "austen.txt" ]; then
         echo "  decompressed    ||      original"
         echo "      out.txt     ||      austen.txt"
         echo "  ===================================="
+        ls -lh | grep 'out.txt'
+        ls -lh | grep 'austen.txt'
         if [[ $(diff out.txt austen.txt) ]]; then
             echo "      Error in decompressed result!"
             echo "      ============================="
