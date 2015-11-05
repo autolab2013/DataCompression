@@ -6,7 +6,7 @@ if [ -e "austen.txt" ]; then
     # ls -lh
     echo "start compress with compress.py..."
     echo ""
-    # TODO: change to compress.py
+    # TODO: change to compress_mac.py
     python compress.py
     echo "  compress result:"
     echo ""
@@ -21,7 +21,7 @@ if [ -e "austen.txt" ]; then
         ls -lh | grep 'decompress.pyc'
         echo ""
         echo "start decompressing..."
-        # TODO: change decompress.py
+        # TODO: change decompress_mac.py
         echo ""
         python decompress.py
         echo "compare decompressed result:"
